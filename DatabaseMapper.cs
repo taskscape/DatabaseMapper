@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -6,16 +6,6 @@ using System.Linq;
 
 namespace DatabaseMapper
 {
-    /// <summary>
-    /// Maps stored procedure to any object, with no use of relection
-    /// Field names of returned columns and property names of classes have to be identical.
-    ///
-    /// useage:
-    /// long postID = 123;
-    /// List<DbParameter> parameters = new List<DbParameter>(); 
-    /// parameters.Add(new DbParameter("postID", System.Data.ParameterDirection.Input, postID));
-    /// List<Category> categories = DbManager.ExecuteList<Category>("GetCategories", parameters);
-    /// </summary>
     public class DatabaseMapper
     {
         private readonly string _connectionString;
@@ -25,7 +15,7 @@ namespace DatabaseMapper
 
         public DatabaseMapper(string connectionString)
         {
-            this._connectionString = connectionString;
+            _connectionString = connectionString;
         }
 
         public enum ExecuteType
